@@ -1,6 +1,7 @@
 from forsys.forsys import ForSys
 
 from . import surface_evolver
+from . import chaste
 from . import frames
 from . import plot
 from . import virtual_edges
