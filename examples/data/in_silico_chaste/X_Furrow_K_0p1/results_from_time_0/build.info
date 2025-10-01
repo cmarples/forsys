@@ -1,0 +1,49 @@
+<ChasteBuildInfo>
+	<ProvenanceInfo>
+		<VersionString>2024.2.3d633b6</VersionString> <!-- build specific -->
+		<IsWorkingCopyModified>1</IsWorkingCopyModified>
+		<BuildInformation>Debug</BuildInformation>
+		<BuildTime>Fri, 19 Sep 2025 13:13:24 +0000</BuildTime>
+		<CurrentTime>Wed, 01 Oct 2025 13:17:30 +0000</CurrentTime>
+		<BuilderUnameInfo>Linux</BuilderUnameInfo>
+		<ChasteTestOutputDirectory>/home/cmarples/Chaste/output/</ChasteTestOutputDirectory>
+		<Projects>
+			<Project>
+				<Name>NotochordElongation</Name>
+				<Version>99ee48a6a79fe6c771b6463d8ef07bbb0247a0d8</Version>
+				<Modified>True</Modified>
+			</Project>
+			<Project>
+				<Name>RigidityTransition2D</Name>
+				<Version>8214d031ca36a7c065ef519470062a7c9bd5b98f</Version>
+				<Modified>True</Modified>
+			</Project>
+			<Project>
+				<Name>TenseFlex</Name>
+				<Version>29d5c5dd486cb62b6f0f16ba1c91b18694c52f09</Version>
+				<Modified>True</Modified>
+			</Project>
+		</Projects>
+	</ProvenanceInfo>
+	<Compiler>
+		<NameAndVersion>/usr/bin/c++, version 11.4.0</NameAndVersion>
+		<Flags>-Wall -Werror -Wnon-virtual-dtor -Woverloaded-virtual -Wextra -Wno-attributes -Wno-unused-parameter -Wvla -Wimplicit-fallthrough=2 -g</Flags>
+	</Compiler>
+	<Libraries>
+		<CompiledIn>
+			<PETSc>3.15.5</PETSc>
+			<Boost>1.74.0</Boost>
+			<HDF5>1.10.7</HDF5>
+			<Parmetis>4.0.3</Parmetis>
+		</CompiledIn>
+		<Binaries>
+			<XSD>4.0.0</XSD>
+		</Binaries>
+		<Optional>
+			<SUNDIALS>5.8.0</SUNDIALS>
+			<VTK>7.1</VTK>
+			<Xerces>3.2.3</Xerces>
+		</Optional>
+	</Libraries>
+	<ChasteCodegenVersion>chaste_codegen 0.10.6</ChasteCodegenVersion>
+</ChasteBuildInfo>

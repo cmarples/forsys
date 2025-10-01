@@ -103,7 +103,7 @@ class Chaste:
         line_tensions = {}
         
         # Attempt to read the line tension file
-        tension_file_path = os.path.join(self.dirname, "SamplingLineTensions.csv")
+        tension_file_path = os.path.join(self.dirname, "GroundTruthLineTensions.csv")
         with open(tension_file_path, "r") as file:
             reader = csv.reader(file)
             edge_data = [(int(row[0]), int(row[1]), float(row[2])) for row in reader]

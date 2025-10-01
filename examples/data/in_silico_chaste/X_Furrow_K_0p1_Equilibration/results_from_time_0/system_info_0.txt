@@ -1,0 +1,21 @@
+Process 0 of 1.
+uname sysname  = Linux
+uname nodename = LAPTOP-11PPRSRB
+uname release  = 6.6.87.2-microsoft-standard-WSL2
+uname version  = #1 SMP PREEMPT_DYNAMIC Thu Jun  5 18:30:46 UTC 2025
+uname machine  = x86_64
+
+Information on number and type of processors:
+model name	: 12th Gen Intel(R) Core(TM) i7-1255U
+model name	: 12th Gen Intel(R) Core(TM) i7-1255U
+model name	: 12th Gen Intel(R) Core(TM) i7-1255U
+model name	: 12th Gen Intel(R) Core(TM) i7-1255U
+
+Information on processor caches, in the same order as above:
+cache size	: 12288 KB
+cache size	: 12288 KB
+cache size	: 12288 KB
+cache size	: 12288 KB
+
+Information on system memory:
+MemTotal:        8133872 kB
