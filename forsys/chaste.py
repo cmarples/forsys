@@ -32,6 +32,8 @@ class Chaste:
         :rtype: Tuple
         """
         
+        print("Calling Chaste reader")
+        
         vertices = {}
         edges  = {}
         cells = {}
@@ -48,6 +50,7 @@ class Chaste:
             vertex_2 = vertices[edge_list[i][1]]
             edges[i] = edge.SmallEdge(i, vertex_1, vertex_2)
             edges[i].gt = ground_truth_tensions[(edge_list[i][0], edge_list[i][1])]
+            #edges[i].gt = 1.0
             
         # build cell dictionary
         for i in range(len(face_list)):
@@ -57,17 +60,8 @@ class Chaste:
                 vertices_in_cell.append(vertices[v])
             cells[i] = cell.Cell(i, vertices_in_cell)
         
-    
-        #for _, r in edges_temp.iterrows():
-        #    edges[int(r.id)] = edge.SmallEdge(int(r.id), vertices[int(r.id1)], vertices[int(r.id2)])
-        #    edges[int(r.id)].gt = round(edges_temp.loc[edges_temp['id'] == int(r.id)]['force'].iloc[0], 4)
         
-        #for _, r in self.get_cells().iterrows():
-        #    vlist = [edges[abs(e)].v1 if e > 0 else edges[abs(e)].v2 for e in r.edges]
-        #    gt_pressure = round(r["pressures"], 4)
-        #    cells[int(r.id)] = cell.Cell(int(r.id), vlist, gt_pressure=gt_pressure)
             
-        
         return vertices, edges, cells
     
     def read_vtu_file(self):

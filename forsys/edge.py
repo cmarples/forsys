@@ -195,8 +195,9 @@ class BigEdge:
         vector = self.get_vector_from_vertex(vid, method, cell, fit_method)
         versor = vector / np.linalg.norm(vector)
         return versor
+        
 
-    def get_vector_from_vertex(self, vid: int, method: str = "edge", cell: object = None, fit_method: str="dlite") -> list:
+    def get_vector_from_vertex(self, vid: int, method: str = "straight", cell: object = None, fit_method: str="dlite") -> list:
         """
         Get the vector representation for the big edge
 
@@ -215,10 +216,19 @@ class BigEdge:
             xc, yc = ve.calculate_circle_center(self.vertices, method=fit_method)
         elif method == "cell" and cell:
             xc, yc = cell.center_x, cell.center_y
+        elif method == "straight":
+            xc, yc = 1, 1
         else:
             raise Exception("Method for versor doesn't exist or cell missing")
-
-        vector = np.array((- (vobject.y - yc), (vobject.x - xc)))
+        
+        
+        
+        if method == "straight":
+            dx = self.vertices[1].x - self.vertices[0].x
+            dy = self.vertices[1].y - self.vertices[0].y
+            vector = np.array([dx, dy])
+        else:
+            vector = np.array((- (vobject.y - yc), (vobject.x - xc)))
 
         correct_sign = self.get_versor_sign(vid)
         if np.any(np.sign(vector) != correct_sign):

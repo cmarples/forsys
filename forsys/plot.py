@@ -301,6 +301,9 @@ def plot_mesh(frame: fframes.Frame,
     :param mirror_y: If True the tissue is plotted as a mirror image in the Y axis, defaults to False
     :type mirror_y: bool, optional
     """
+    
+    print("Calling plot_mesh")
+    
     if not ax:
         _, ax = plt.subplots(1, 1)
     if kwargs.get("plot_vertices", False) and not kwargs.get("plot_tjs", False):
@@ -326,12 +329,18 @@ def plot_mesh(frame: fframes.Frame,
                 for vector in vertex_big_edges_versors:
                     size = np.linalg.norm(vector)
                     versor = vector / size
+                    
+                    #x = 1.0
+                    #ax.annotate("", xytext=(v.x, v.y), xy=(versor[0]*x, versor[1]*x),arrowprops=dict(arrowstyle="->"))
+                    
+                    x = 2.0
+                    w = 0.5
                     plt.arrow(v.x,
                               v.y,
-                              versor[0] * 10,
-                              versor[1] * 10,
+                              versor[0] * x,
+                              versor[1] * x,
                               color="green",
-                              width=4,
+                              width=w,
                               alpha=0.7,
                               zorder=1000)
 
