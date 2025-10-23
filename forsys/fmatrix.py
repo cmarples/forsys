@@ -33,7 +33,7 @@ class ForceMatrix:
     timeseries: dict
     angle_limit: float = np.inf
     circle_fit_method: str = "dlite"
-    representation_method: str = "straight"
+    representation_method: str = "edge"
 
     def __post_init__(self):
         """Constructor method
@@ -79,7 +79,11 @@ class ForceMatrix:
         """
         max_rows = len(self.tj_vertices) * 2
         cols = len(self.big_edges_to_use) + len(self.externals_to_use) * 2
-        mat = np.empty(shape=(max_rows, cols))
+        
+        print('build matrix')
+        #mat = np.empty(shape=(max_rows, cols))
+        mat = np.zeros(shape=(max_rows, cols))
+        
         position_index = 0
         for vid in self.tj_vertices:
             row_x, row_y = self.get_row(vid)

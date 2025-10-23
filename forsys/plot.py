@@ -14,7 +14,7 @@ from copy import deepcopy
 import PIL
 import tifffile as tif
 
-
+#get_vector_from_vertex
 def plot_with_stress_custom(frame: fframes.Frame, step: str, folder: str, stress_dictionary: dict, 
                             earr: list, versors: Union[bool, list]=False, maxForce: float=None, 
                             minForce: float=None, normalized: Union[bool, str]=False, mirror_y: bool=False, **kwargs) -> None:
@@ -324,6 +324,7 @@ def plot_mesh(frame: fframes.Frame,
             if len(v.ownEdges) >= 3:
                 vertex_big_edges = [frame.big_edges[beid] for beid in v.own_big_edges]
                 vertex_big_edges_versors = [big_edge.get_vector_from_vertex(v.id,
+                                                                            method=kwargs.get("representation_method", "edge"),
                                                                             fit_method="dlite") for big_edge in vertex_big_edges]
                 # for versor in ve.get_versors(frame.vertices, frame.edges, v.id):
                 for vector in vertex_big_edges_versors:

@@ -64,7 +64,8 @@ class ForSys():
                                 metadata=metadata,
                                 timeseries=self.mesh,
                                 angle_limit=kwargs.get("angle_limit", np.pi),
-                                circle_fit_method=kwargs.get("circle_fit_method", "dlite"),)
+                                circle_fit_method=kwargs.get("circle_fit_method", "dlite"),
+                                representation_method=kwargs.get("representation_method", "edge"),)
 
 
     def build_pressure_matrix(self, when: int = 0):

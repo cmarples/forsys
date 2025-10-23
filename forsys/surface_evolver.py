@@ -8,8 +8,6 @@ import forsys.vertex as vertex
 import forsys.edge as edge
 import forsys.cell as cell
 
-import sys
-
 @dataclass
 class SurfaceEvolver:
     """Class interface with SurfaceEvolver-generated files
@@ -31,8 +29,6 @@ class SurfaceEvolver:
         :return: Three dictionaries with the vertices, edges and cells respectively   
         :rtype: Tuple
         """
-        
-        print("USING FORSYS VERSION OBTAINED FROM GITHUB!", file=sys.stderr)
         
         edges_temp = self.get_edges()
         
